@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>This page is used for testing WebSocket HandShake</p>
+
+<script>
+    var ws = new WebSocket("ws://localhost:8000/handshake")
+
+    ws.addEventListener("open", function (ev) {
+        console.log("websocket is opened")
+        console.log(ev)
+    })
+    ws.addEventListener("close", function (ev) {
+        console.log("websocket is closed")
+        console.log(ev)
+    })
+    ws.addEventListener("error", function (ev) {
+        console.log("occur error: ")
+        console.log(ev)
+    })
+</script>
+</body>
+</html>
